@@ -10,9 +10,12 @@
 		CA4CBA2C27C1140C00C30CB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CBA2B27C1140C00C30CB3 /* AppDelegate.swift */; };
 		CA4CBA2E27C1140C00C30CB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CBA2D27C1140C00C30CB3 /* SceneDelegate.swift */; };
 		CA4CBA3027C1140C00C30CB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CBA2F27C1140C00C30CB3 /* ViewController.swift */; };
-		CA4CBA3327C1140C00C30CB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4CBA3127C1140C00C30CB3 /* Main.storyboard */; };
 		CA4CBA3527C1141100C30CB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA4CBA3427C1141100C30CB3 /* Assets.xcassets */; };
 		CA4CBA3827C1141100C30CB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4CBA3627C1141100C30CB3 /* LaunchScreen.storyboard */; };
+		CA90EEAD27CD066C0028BD7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA90EEAC27CD066C0028BD7C /* Main.storyboard */; };
+		CA90EEAF27CD06950028BD7C /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90EEAE27CD06950028BD7C /* SpeechService.swift */; };
+		CA90EEB127CD0D2C0028BD7C /* MyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90EEB027CD0D2C0028BD7C /* MyTextView.swift */; };
+		CA90EEB327CD0F610028BD7C /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90EEB227CD0F610028BD7C /* Books.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +23,13 @@
 		CA4CBA2B27C1140C00C30CB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA4CBA2D27C1140C00C30CB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CA4CBA2F27C1140C00C30CB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CA4CBA3227C1140C00C30CB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA4CBA3427C1141100C30CB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA4CBA3727C1141100C30CB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA4CBA3927C1141100C30CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA90EEAC27CD066C0028BD7C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CA90EEAE27CD06950028BD7C /* SpeechService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		CA90EEB027CD0D2C0028BD7C /* MyTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextView.swift; sourceTree = "<group>"; };
+		CA90EEB227CD0F610028BD7C /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,42 @@
 		CA4CBA2A27C1140C00C30CB3 /* Display_BookContent */ = {
 			isa = PBXGroup;
 			children = (
-				CA4CBA2B27C1140C00C30CB3 /* AppDelegate.swift */,
-				CA4CBA2D27C1140C00C30CB3 /* SceneDelegate.swift */,
-				CA4CBA2F27C1140C00C30CB3 /* ViewController.swift */,
-				CA4CBA3127C1140C00C30CB3 /* Main.storyboard */,
+				CA4CBA3F27C1167D00C30CB3 /* ViewControllers */,
+				CA4CBA4027C1169A00C30CB3 /* Views */,
+				CA4CBA4127C116AE00C30CB3 /* Products */,
 				CA4CBA3427C1141100C30CB3 /* Assets.xcassets */,
-				CA4CBA3627C1141100C30CB3 /* LaunchScreen.storyboard */,
 				CA4CBA3927C1141100C30CB3 /* Info.plist */,
 			);
 			path = Display_BookContent;
+			sourceTree = "<group>";
+		};
+		CA4CBA3F27C1167D00C30CB3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA90EEB027CD0D2C0028BD7C /* MyTextView.swift */,
+				CA4CBA2F27C1140C00C30CB3 /* ViewController.swift */,
+				CA90EEB227CD0F610028BD7C /* Books.swift */,
+				CA90EEAE27CD06950028BD7C /* SpeechService.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CA4CBA4027C1169A00C30CB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA4CBA3627C1141100C30CB3 /* LaunchScreen.storyboard */,
+				CA90EEAC27CD066C0028BD7C /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CA4CBA4127C116AE00C30CB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA4CBA2B27C1140C00C30CB3 /* AppDelegate.swift */,
+				CA4CBA2D27C1140C00C30CB3 /* SceneDelegate.swift */,
+			);
+			path = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +158,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA90EEAD27CD066C0028BD7C /* Main.storyboard in Resources */,
 				CA4CBA3827C1141100C30CB3 /* LaunchScreen.storyboard in Resources */,
 				CA4CBA3527C1141100C30CB3 /* Assets.xcassets in Resources */,
-				CA4CBA3327C1140C00C30CB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +171,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA90EEB327CD0F610028BD7C /* Books.swift in Sources */,
 				CA4CBA3027C1140C00C30CB3 /* ViewController.swift in Sources */,
 				CA4CBA2C27C1140C00C30CB3 /* AppDelegate.swift in Sources */,
 				CA4CBA2E27C1140C00C30CB3 /* SceneDelegate.swift in Sources */,
+				CA90EEAF27CD06950028BD7C /* SpeechService.swift in Sources */,
+				CA90EEB127CD0D2C0028BD7C /* MyTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CA4CBA3127C1140C00C30CB3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA4CBA3227C1140C00C30CB3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CA4CBA3627C1141100C30CB3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

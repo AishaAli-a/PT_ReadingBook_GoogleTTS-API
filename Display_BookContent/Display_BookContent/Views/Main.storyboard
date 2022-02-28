@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kj2-WD-IrW">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="7dy-gq-jN0">
+            <objects>
+                <viewController storyboardIdentifier="DisplayBookContentVC" id="Kj2-WD-IrW" customClass="ViewController" customModule="Display_BookContent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qbb-tE-KKg">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eup-wf-FI5">
+                                <rect key="frame" x="10" y="34" width="1004" height="1262"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfv-Jr-Wwx" customClass="PALongTextView" customModule="Display_BookContent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="1004" height="1231"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VR5-zc-mgI">
+                                        <rect key="frame" x="0.0" y="1231" width="1004" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-3u-pww" userLabel="play_Label">
+                                                <rect key="frame" x="0.0" y="0.0" width="321.5" height="31"/>
+                                                <color key="tintColor" red="0.92549019610000005" green="0.47450980390000003" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="pause" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpm-RJ-96S">
+                                                <rect key="frame" x="341.5" y="0.0" width="321" height="31"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Speak"/>
+                                                <connections>
+                                                    <action selector="didPressSpeakButton:" destination="Kj2-WD-IrW" eventType="touchUpInside" id="6w9-Rn-voI"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1dt-oc-Rwa">
+                                                <rect key="frame" x="682.5" y="0.0" width="321.5" height="31"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cxP-nX-rSK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="151" height="32"/>
+                                                        <color key="backgroundColor" red="0.30980392159999998" green="0.30588235289999999" blue="0.64371744789999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <segments>
+                                                            <segment title="WaveNet"/>
+                                                            <segment title="Standard"/>
+                                                        </segments>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </segmentedControl>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8Zk-t5-xOw">
+                                                        <rect key="frame" x="171" y="0.0" width="150.5" height="32"/>
+                                                        <color key="backgroundColor" red="0.30980392159999998" green="0.30588235289999999" blue="0.64371744789999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <segments>
+                                                            <segment title="Female"/>
+                                                            <segment title="Male"/>
+                                                        </segments>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96862745289999996" green="0.96470588450000005" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="0.92549019610000005" green="0.47450980390000003" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96862745289999996" green="0.96470588450000005" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qb1-VO-Hms"/>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.96470588450000005" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="qb1-VO-Hms" firstAttribute="trailing" secondItem="eup-wf-FI5" secondAttribute="trailing" constant="10" id="XJ7-1P-sAS"/>
+                            <constraint firstItem="eup-wf-FI5" firstAttribute="leading" secondItem="qb1-VO-Hms" secondAttribute="leading" constant="10" id="daw-8H-88B"/>
+                            <constraint firstItem="qb1-VO-Hms" firstAttribute="bottom" secondItem="eup-wf-FI5" secondAttribute="bottom" constant="50" id="tiU-Jg-yhN"/>
+                            <constraint firstItem="eup-wf-FI5" firstAttribute="top" secondItem="qb1-VO-Hms" secondAttribute="top" constant="10" id="yMh-MG-bve"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hBG-Lo-Gpv"/>
+                    <connections>
+                        <outlet property="speakButton" destination="Kpm-RJ-96S" id="BmO-5P-U2P"/>
+                        <outlet property="textView" destination="tfv-Jr-Wwx" id="uSt-TM-THF"/>
+                        <outlet property="voiceCategoryControl" destination="cxP-nX-rSK" id="OYi-wF-VqD"/>
+                        <outlet property="voiceGenderControl" destination="8Zk-t5-xOw" id="b5f-7J-FWQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYQ-VF-lmM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1382" y="3885"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pause" catalog="system" width="88" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

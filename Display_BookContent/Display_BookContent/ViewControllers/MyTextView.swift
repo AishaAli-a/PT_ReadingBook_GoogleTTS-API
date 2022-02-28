@@ -8,6 +8,8 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
   var scrollView =  UIScrollView()
   var pageControl = UIPageControl ()
   var myCustomeLable = UILabel ()
+  var voiceType: VoiceType?
+
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -44,6 +46,7 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
     pageControl.pageIndicatorTintColor = .blue
     pageControl.currentPageIndicatorTintColor = UIColor.red
     
+
     // Adding the Two Views
     addSubview(scrollView)
     addSubview(pageControl)
@@ -104,11 +107,15 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
 
     texts.append(section)
     pages = texts.count
+//    print("\n\n# # #\n\(section)\n\n")
+
     
     
     var resultString = "  "
     for section in texts {
       resultString.append(section)
+
+  
     }
 
     var textViews = [AnyHashable](repeating: 0, count: texts.count)
@@ -123,10 +130,10 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
       let frame: CGRect = CGRect(origin: CGPoint(x: scrollView.frame.size.width * CGFloat(i),
                                                  y: 0), size: scrollView.frame.size)
       let view = UIView(frame: frame)
-      print("\n\n- - - -view :\(view)\n\n")
+//      print("\n\n- - - -view :\(view)\n\n")
 
 
-      //
+      //Widths HERE
       var labelFrame = self.scrollView.bounds
       labelFrame.origin.x += 25
       labelFrame.size.width -= 1004// may be here the solution of your problem
@@ -135,15 +142,18 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
       //TODO: -  My custome Label
       
       myCustomeLable = UILabel(frame: labelFrame) // هنا آنشأت الفريم sol must be here
-//      myCustomeLable.backgroundColor = .blue
+      myCustomeLable.backgroundColor = .blue
       
       myCustomeLable.numberOfLines = 100
       
       // here should print the text
       myCustomeLable.text = "\(text)"
+      print("")
 
-//      print("\n\n- - - -label.text :\(label.text!)\n\n")
-
+////      print("\n\n- - - -label.text :\(myCustomeLable.text!)\n\n")
+//      SpeechService.shared.speak(text: myCustomeLable.text!, voiceType: .standardFemale){
+//
+//      }
       myCustomeLable.sizeToFit()
       view.addSubview(myCustomeLable)
       view.addSubview(myCustomeLable)
@@ -161,8 +171,12 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let pageWidth: CGFloat = self.scrollView.frame.size.width;
     let page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    self.pageControl.currentPage = Int(page);
+    self.pageControl.currentPage = Int(page)
+    print("****\n \( self.myCustomeLable.text!)")
+
+//    self.myCustomeLable.text
   }
+  
   
 
 

@@ -90,7 +90,7 @@ class ViewController: UIViewController {
         let textData=try Data(contentsOf: textURL)
         
         let textFromURL = String(data: textData, encoding: .utf8)!
-        self.textView.text = textFromURL
+//        self.textView.text = textFromURL
         self.textView.setText(textFromURL)
 
         

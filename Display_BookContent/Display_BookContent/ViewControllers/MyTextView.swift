@@ -8,7 +8,13 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
   var scrollView =  UIScrollView()
   var pageControl = UIPageControl ()
   var myCustomeLable = UILabel ()
+  var texts: [String] = []
   var voiceType: VoiceType?
+  var textViews = [AnyHashable]()
+  var myPersonalTest: [UILabel] = []
+
+  
+
 
 
   required init?(coder aDecoder: NSCoder) {
@@ -86,7 +92,6 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
     
     var pages: Int = 0
     var cursur = 0
-    var texts: [String] = []
     var section: String = ""
     
     
@@ -107,18 +112,18 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
 
     texts.append(section)
     pages = texts.count
-//    print("\n\n# # #\n\(section)\n\n")
 
     
     
     var resultString = "  "
     for section in texts {
       resultString.append(section)
+//      print("\n\n# # #\n\(resultString) \n###############\n")
+
 
   
     }
 
-    var textViews = [AnyHashable](repeating: 0, count: texts.count)
     
     
     //MARK: - Here i am
@@ -148,14 +153,13 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
       
       // here should print the text
       myCustomeLable.text = "\(text)"
-      print("")
+//      print("====")
 
-////      print("\n\n- - - -label.text :\(myCustomeLable.text!)\n\n")
+//      print("\n\n- - - -label.text :\(myCustomeLable.text!)\n\n")
 //      SpeechService.shared.speak(text: myCustomeLable.text!, voiceType: .standardFemale){
-//
 //      }
       myCustomeLable.sizeToFit()
-      view.addSubview(myCustomeLable)
+      myPersonalTest.append(myCustomeLable)
       view.addSubview(myCustomeLable)
       scrollView.addSubview(view)
       textViews.append(view)
@@ -166,15 +170,24 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
     scrollView.contentSize = CGSize(width: scrollView.frame.size.width * CGFloat(texts.count), height: scrollView.frame.size.height)
     pageControl.numberOfPages = texts.count
     pageControl.currentPage = 0
+    print("\n\n# # #\n\(myPersonalTest.count)\n\n")
+
   }
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
     let pageWidth: CGFloat = self.scrollView.frame.size.width;
     let page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     self.pageControl.currentPage = Int(page)
-    print("****\n \( self.myCustomeLable.text!)")
+    let b = myPersonalTest[Int(page)].text!
+    print("\n\n# # #\n\(myPersonalTest[Int(page)].text!)\n\n")
+    SpeechService.shared.speak(text: b , voiceType: .standardMale){
+    }
+  }
+  
+  // MARK: - It Takes the priveous text
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 
-//    self.myCustomeLable.text
   }
   
   

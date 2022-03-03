@@ -20,7 +20,7 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    ReadFromURL(url: "http://skunkworks.ignitesol.com:8000/books")
+    ReadFromURL(url:"http://skunkworks.ignitesol.com:8000/books/?mime_type=image%2Fjpeg")
 
   }
   

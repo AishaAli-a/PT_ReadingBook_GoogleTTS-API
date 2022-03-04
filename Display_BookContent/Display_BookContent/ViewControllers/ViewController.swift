@@ -20,8 +20,8 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    ReadFromURL(url:"http://skunkworks.ignitesol.com:8000/books/?mime_type=image%2Fjpeg")
-
+//    ReadFromURL(url: "http://skunkworks.ignitesol.com:8000/books")
+    Display()
   }
   
   @IBAction func didPressSpeakButton(_ sender: Any) {
@@ -103,5 +103,30 @@ class ViewController: UIViewController {
       
     }
   }
+  
+  
+  func Display(){
+    do{
+      
+    
+      DispatchQueue.main.async {
+        let textURL=URL(string: "http://www.gutenberg.org/files/119/119-0.txt")!
+        let textData=try? Data(contentsOf: textURL)
+        let textFromURL = String(data: textData!, encoding: .utf8)
+        self.textView.setText(textFromURL!)
+      }
+      
+    } catch {
+      print("cannot load from server")
+
+      
+    }
+    
+  }
+  
+  
+  
+  
+  
 }
   

@@ -117,11 +117,7 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
     
     var resultString = "  "
     for section in texts {
-      resultString.append(section)
-//      print("\n\n# # #\n\(resultString) \n###############\n")
-
-
-  
+      resultString.append(section)  
     }
 
     
@@ -174,16 +170,16 @@ class PALongTextView: UILabel , UIScrollViewDelegate{
 
   }
 
-//  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//
-//    let pageWidth: CGFloat = self.scrollView.frame.size.width;
-//    let page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-//    self.pageControl.currentPage = Int(page)
-//    let b = myPersonalTest[Int(page)].text!
-//    print("\n\n# # #\n\(myPersonalTest[Int(page)].text!)\n\n")
-//    SpeechService.shared.speak(text: b , voiceType: .standardMale){
-//    }
-//  }
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+    let pageWidth: CGFloat = self.scrollView.frame.size.width;
+    let page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = Int(page)
+    let b = myPersonalTest[Int(page)].text!
+    print("\n\n# # #\n\(myPersonalTest[Int(page)].text!)\n\n")
+    SpeechService.shared.speak(text: b , voiceType: .standardMale){
+    }
+  }
   
   // MARK: - It Takes the priveous text
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
